@@ -11,6 +11,7 @@ pipeline {
         stage ('Install Package.json depedancy') {
             steps {
                 nodejs('npm') {
+                    sh 'echo node --version'
                     sh 'npm install'
                 }
             }
