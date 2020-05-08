@@ -11,7 +11,7 @@ pipeline {
         stage ('Install Package.json depedancy') {
             steps {
                 nodejs('npm') {
-                    sh 'echo node --version'
+                    sh 'node --version'
                     sh 'npm install'
                 }
             }
@@ -20,7 +20,7 @@ pipeline {
         stage ('build') {
             steps {
                 nodejs('npm') {
-                    sh 'npm build'
+                    sh 'npm run build'
                 }
             }
         }
