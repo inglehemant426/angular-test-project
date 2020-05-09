@@ -24,6 +24,14 @@ pipeline {
                 }
             }
         }
+
+        stage ('deploy to apache web server') {
+            steps {
+               sshagent(['deploytomcat']) {
+                    sh 'scp -o StrictHostKeyChecking=no */var/lib/jenkins/workspace/angular-pipeline/dist/ ec2-user@172.31.85.115:/var/www/html/angular-app'
+                }
+            }
+        }
         
     }
 }
