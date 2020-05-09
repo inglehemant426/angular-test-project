@@ -23,7 +23,7 @@ pipeline {
                     sh 'npm run build'
                     sh 'cd /var/lib/jenkins/workspace/angular-pipeline'
                     sh 'pwd'
-                    sh 'll'
+                    sh 'ls'
                 }
             }
         }
